@@ -1,0 +1,167 @@
+$base-color: #555555;
+
+@import 'sencha-touch/default/all';
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+@include pictos-iconmask('photo1');
+@include pictos-iconmask('add');
+@include pictos-iconmask('photos2');
+@include pictos-iconmask('home2');
+@include pictos-iconmask('cloud_black_upload1');
+@include pictos-iconmask('cloud');
+@include pictos-iconmask('home');
+@include pictos-iconmask('user');
+
+@include sencha-button-ui('pathmenu', white, 'glossy');
+.x-button {
+	&.x-button-pathmenu {
+		background: #555;
+		border: 3px solid #fff;
+		border-radius:50%;
+		padding-left: 5px;
+		-webkit-box-shadow: 0px 0px 2px #999;
+
+		.x-button-icon {
+			&.x-icon-mask {
+				background-color: #fff;
+				color: #fff;
+				background-image: none;
+			}
+		}
+
+		&.x-button-active,
+		&.x-button-pressing {
+			background: #555;
+		}
+
+		&.menubutton {
+			background: rgb(135,211,251);
+		}
+
+		&.open {
+			-webkit-transform: rotate(360deg) translateZ(0);
+		}
+
+		&.close {
+			-webkit-transform: rotate(-360deg) translateZ(0);
+		}
+
+
+		&.menubutton {
+			-webkit-transition: all 300ms;
+
+			&.open {
+				-webkit-transform: rotate(45deg) translateZ(0);
+			}
+
+			&.close {
+				-webkit-transform: rotate(0deg) translateZ(0);
+			}
+		}
+		&.menuitembutton {
+			-webkit-transition-duration: 300ms;
+			-webkit-transition-property: opacity, left, bottom, -webkit-transform;
+			-webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			opacity: 1;
+
+			&.close {
+			}
+
+			&.tapped {
+				-webkit-transform: rotate(180deg) scale(4) translatez(0);
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.bg {
+	background: inline-image('noise.png');
+
+	&.yellow {
+		.x-body {
+			background-color: rgba(245, 255, 0, 0.09);
+		}
+	}
+	.x-body {
+		background-color: rgba(238,238,238, 0.2);
+	}
+}
+
+.photo-item-container {
+	width: 140px;
+	height: 140px;
+	margin: 7px;
+	padding: 5px;
+	display: block;
+	background: #fff;
+	-webkit-box-shadow: 0 0 5px #555;
+	float: left;
+	text-align: center;
+	vertical-align: center;
+
+	.image {
+		background-position: center center ;
+		background-repeat: no-repeat;
+	}
+}
+
+.shareditem {
+	.from {
+		float: left;
+		img {
+			border-radius: 5px;
+		}
+	}
+
+	.image {
+		padding: 5px;
+		background: #fff;
+		-webkit-box-shadow: 0 0 5px #555;
+		width: 210px;
+		margin-left: 60px;
+	}
+	.clear {
+		clear: both;
+	}
+}
+
+.photodetail {
+	.image {
+		width: 290px;
+		margin-top: 15px;
+		padding: 5px;
+		background: #fff;
+		-webkit-box-shadow: 0 0 5px #555;
+	}
+}
+
+.home {
+	padding: 0 20px;
+}
+
+.x-dataview-emptytext,
+.x-list-emptytext {
+	padding: 1.2em;
+	font-style: italic;
+}
